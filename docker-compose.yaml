@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+    frontend:
+        container_name: frontend
+        image: jcarr172/frontend
+        build: ./frontend
+        ports: 
+          - published: 5000
+            target: 5000
+        environment:
+          DATABASE_URI: ${DATABASE_URI}
+    race-generator:
+        container_name: race-generator
+        image: jcarr172/race-generator
+        build: ./race-generator
+    class-generator:
+        container_name: class-generator
+        image: jcarr172/class-generator
+        build: ./class-generator
+    statline-generator:
+        container_name: statline-generator
+        image: jcarr172/statline-generator
+        build: ./statline-generator
