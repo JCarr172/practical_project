@@ -33,20 +33,15 @@ def home():
 def creator():
      race = requests.get('http://race-generator:5000/get_race')
      class_ = requests.get('http://class-generator:5000/get_class')
-     strength = random.randint(8,15)
-     dex = random.randint(8,15)
-     con = random.randint(8,15)
-     wis = random.randint(8,15)
-     intelligence = random.randint(8,15)
-     charisma = random.randint(8,15)
+     statline = requests.post('http://statline-generator:5000/get_stats', json={"race":race.text})
      new_char = Character(race = race.text,
                class_= class_.text,
-               strength = strength,
-               dex = dex,
-               con = con,
-               wis = wis,
-               intelligence = intelligence,
-               charisma = charisma)
+               strength = statline.json()["stren"],
+               dex = statline.json()["dex"],
+               con = statline.json()["con"],
+               wis = statline.json()["wis"],
+               intelligence = statline.json()["intel"],
+               charisma = statline.json()["char"])
      db.session.add(new_char)
      db.session.commit()
      return redirect(url_for("home"))
