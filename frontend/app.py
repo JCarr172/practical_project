@@ -29,8 +29,8 @@ def home():
      all_chars = Character.query.order_by(Character.id.desc()).limit(5).all()
      return render_template('home.html', all_chars = all_chars)
 
-@app.route('/creator')
-def creator():
+@app.route('/creater')
+def creater():
      race = requests.get('http://race-generator:5000/get_race')
      class_ = requests.get('http://class-generator:5000/get_class')
      statline = requests.post('http://statline-generator:5000/get_stats', json={"race":race.text})

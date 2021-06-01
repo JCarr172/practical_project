@@ -7,13 +7,14 @@ app = Flask(__name__)
 @app.route('/get_stats', methods = ['POST'])
 def stats():
     race = request.get_json()["race"]
-    strength = random.randint(8,15)
-    dext = random.randint(8,15)
-    const = random.randint(8,15)
-    wisd = random.randint(8,15)
-    intelli = random.randint(8,15)
-    charisma = random.randint(8,15)
-    if race == 'HighElf':
+    standard_stats=[15, 14, 13, 12, 10, 8]
+    strength = standard_stats.pop(random.randint(0,5))
+    dext = standard_stats.pop(random.randint(0,4))
+    const = standard_stats.pop(random.randint(0,3))
+    wisd = standard_stats.pop(random.randint(0,2))
+    intelli = standard_stats.pop(random.randint(0,1))
+    charisma = standard_stats.pop()
+    if race == 'High Elf':
         dext +=2
         intelli +=1
     elif race == 'Mountain Dwarf':
