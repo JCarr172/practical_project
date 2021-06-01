@@ -27,7 +27,8 @@ class Character(db.Model):
 @app.route('/home')
 def home():
      all_chars = Character.query.order_by(Character.id.desc()).limit(5).all()
-     return render_template('home.html', all_chars = all_chars)
+     latest = Character.query.order_by(Character.id.desc()).limit(5).first()
+     return render_template('home.html', all_chars = all_chars, latest = latest)
 
 @app.route('/creater')
 def creater():

@@ -29,4 +29,4 @@ class TestHome(TestBase):
             mocker.post('http://statline-generator:5000/get_stats', json={'stren':15,'dex':14,'con':13,'wis':8,'intel':16,'char':10})
             response = self.client.get(url_for("creater"),follow_redirects=True)
             self.assertEqual(response.status_code, 200)
-            self.assertIn(b'Human', response.data)
+            self.assertIn(b'Your character is a human wizard', response.data)
