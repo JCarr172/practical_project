@@ -44,12 +44,12 @@ def home():
 
 @app.route('/creater/<name>', methods=['GET', 'POST'])
 def creater(name):
-     race = requests.get('http://race-generator:5000/get_race')
-     class_ = requests.get('http://class-generator:5000/get_class')
-     statline = requests.post('http://statline-generator:5000/get_stats', json={"race":race.text})
+     race_class = requests.get('http://class-generator:5000/get_class')
+     stats = requests.get('http://stats-generator:5000/get_stats')
+     statline = requests.post('http://calculator:5000/change_stats', json={"race":race_class.json()['race'], 'stats':stats.json()['stats']})
      new_char = Character(name = name,
-               race = race.text,
-               class_= class_.text,
+               race = race_class.json()['race'],
+               class_= race_class.json()['class'],
                strength = statline.json()["stren"],
                dex = statline.json()["dex"],
                con = statline.json()["con"],
