@@ -12,6 +12,6 @@ pip3 install -r frontend/requirements.txt
 
 
 python3 -m pytest frontend 
-python3 -m pytest statline-generator
-python3 -m pytest race-generator
+python3 -m pytest stats-generator
+python3 -m pytest calculator
 python3 -m pytest class-generator
