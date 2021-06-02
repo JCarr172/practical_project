@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h2>This webapp creates a random DnD character for you!</h2>
+<form method='POST' action='' >
+    {{form.hidden_tag() }}
+    {{form.name.label}} {{form.name}}
+    {% if form.name.errors %}
+        {% for error in form.name.errors %}
+            {{error}}
+        {% endfor %}
+    {% endif %}
+    <br>
+    {{form.submit}}
+</form>
+<p>
+    {{latest.name}} is a {{latest.race}} {{latest.class_}} with stats:<br>
+    Strength: {{latest.strength}}
+    Dexterity: {{latest.dex}}
+    Constitution: {{latest.con}} <br>
+    Wisdom: {{latest.wis}}
+    Intelligence: {{latest.intelligence}}
+    Charisma: {{latest.charisma}}
+</p>
+
+<h3> Your last five characters were:</h3>
+
+{% for character in all_chars %}
+
+<p>
+    {{character.name}}, a {{character.race}} {{character.class_}} with stats:<br>
+     Strength: {{character.strength}}
+    Dexterity: {{character.dex}}
+    Constitution: {{character.con}} <br>
+    Wisdom: {{character.wis}}
+    Intelligence: {{character.intelligence}}
+    Charisma: {{character.charisma}}
+</p>
+{% endfor %}
+
+{% endblock body %}
