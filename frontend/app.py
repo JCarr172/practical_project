@@ -12,6 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 app.config['SECRET_KEY'] = os.getenv('SECRET')
 
 db = SQLAlchemy(app)
+
 class Character(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(30), nullable = False)

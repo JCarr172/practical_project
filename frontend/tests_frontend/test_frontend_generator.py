@@ -21,12 +21,12 @@ class TestBase(TestCase):
         db.session.remove()
         db.drop_all()
 
-class TestHome(TestBase):
+class Testcreate(TestBase):
     def test_create(self):
         with requests_mock.Mocker() as mocker:
-            mocker.get('http://race-generator:5000/get_race', text='Human')
-            mocker.get('http://class-generator:5000/get_class', text='Wizard')
-            mocker.post('http://statline-generator:5000/get_stats', json={'stren':15,'dex':14,'con':13,'wis':8,'intel':16,'char':10})
-            response = self.client.get(url_for("creater"),follow_redirects=True)
+            mocker.get('http://stats-generator:5000/get_stats', json={'stats':{'stren':15,'dex':14,'con':13,'wis':8,'intel':16,'char':10}})
+            mocker.get('http://class-generator:5000/get_class', json={'race':'Human','class':'Wizard'})
+            mocker.post('http://calculator:5000/change_stats', json={'stren':15,'dex':14,'con':13,'wis':8,'intel':16,'char':10})
+            response = self.client.get(url_for("creater", name = 'Caleb'),follow_redirects=True)
             self.assertEqual(response.status_code, 200)
-            self.assertIn(b'Your character is a Human Wizard', response.data)
+            self.assertIn(b'Caleb is a Human Wizard', response.data)
