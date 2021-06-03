@@ -5,7 +5,10 @@ pipeline{
             rollback = 'false'
             TEST_DATABASE_URI = credentials('TEST_DATABASE_URI')
             TEST_SECRET = credentials('TEST_SECRET')
-            DOCKER_LOGIN = credentials('docker-hub-credentials')
+            DATABASE_URI = credentials('DATABASE_URI')
+            SECRET = credentials('SECRET')
+            DOCKER_USER = credentials('DOCKER_USR')
+            DOCKER_PSWD = credentials('DOCKER_PSWD')
             }
         stages{
             stage('Run pytest'){
