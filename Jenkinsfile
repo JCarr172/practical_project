@@ -15,8 +15,6 @@ pipeline{
                             }
                         }
                     }
-        }
-        stages{
             stage('Build and Push'){
                 steps{
                     script{
@@ -24,8 +22,6 @@ pipeline{
                             }
                         }
                     }
-        }
-        stages{
             stage('Ansible Configuration'){
                 steps{
                     script{
@@ -33,8 +29,6 @@ pipeline{
                             }
                         }
                     }
-        }
-        stages{
             stage('Install docker and set up swarm'){
                 steps{
                     script{
