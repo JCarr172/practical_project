@@ -1,3 +1,3 @@
 docker-compose build
-docker login -u ${docker-hub-credentials_USR} -p ${docker-hub-credentials_PSW}
+docker login -u ${DOCKER_USR} -p ${DOCKER_PSWD}
 docker-compose push
