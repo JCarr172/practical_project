@@ -1,3 +1,3 @@
-sudo docker-compose build
-sudo docker login -u ${DOCKER_USR} -p ${DOCKER_PSWD}
-sudo docker-compose push
+docker-compose build
+docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+docker-compose push

@@ -7,8 +7,8 @@ pipeline{
             TEST_SECRET = credentials('TEST_SECRET')
             DATABASE_URI = credentials('DATABASE_URI')
             SECRET = credentials('SECRET')
-            DOCKER_USER = credentials('DOCKER_USR')
-            DOCKER_PSWD = credentials('DOCKER_PSWD')
+            DOCKER_USERNAME = credentials('DOCKER_USERNAME')
+            DOCKER_PASSWORD = credentials('DOCKER_PASSWORD')
             }
         stages{
             stage('Run pytest'){
