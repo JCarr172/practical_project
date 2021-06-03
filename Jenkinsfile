@@ -35,7 +35,6 @@ pipeline{
             stage('Install docker and set up swarm'){
                 steps{
                     script{
-                            sh 'export ANSIBLE_HOST_KEY_CHECKING=False'
                             sh 'ansible-playbook -i inventory.yaml playbook.yaml'
                             }
                         }
