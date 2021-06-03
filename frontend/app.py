@@ -31,7 +31,7 @@ class NameForm(FlaskForm):
           Length(min=1,max=30,message='Input was too long')])
      submit = SubmitField('Submit')
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 @app.route('/home', methods=['GET','POST'])
 def home():
      form = NameForm()

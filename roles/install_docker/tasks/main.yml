@@ -1,0 +1,39 @@
+---
+# tasks file for install_docker
+- name: apt install
+  apt: 
+    pkg: 
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+      - python3
+      - python3-pip
+    state: present
+    update_cache: true
+  register: docker_install
+
+- name: apt key
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: apt repo
+  ansible.builtin.apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+
+- name: apt install 2
+  apt: 
+    pkg: 
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: present
+    update_cache: true
+
+- name: "Install docker pip"
+  pip:
+    name: docker
+    executable: pip3

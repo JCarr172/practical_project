@@ -1,0 +1,9 @@
+---
+# tasks file for docker_manager
+- name: Init a new swarm
+  docker_swarm:
+    state: present
+
+- name: Get swarm info
+  docker_swarm_info:
+  register: swarm_info
