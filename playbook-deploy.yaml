@@ -5,3 +5,8 @@
     copy:
       src: docker-compose.yaml
       dest: docker-compose.yaml
+
+- hosts: nginx
+  become: true
+  roles:
+  - loadbalancer
