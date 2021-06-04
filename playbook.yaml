@@ -1,4 +1,6 @@
-- hosts: all
+- hosts: 
+  manger
+  worker1
   become: true
   roles:
   - install_docker
@@ -12,8 +14,3 @@
   become: true
   roles:
   - docker_worker
-
-- hosts: nginx
-  become: true
-  roles:
-  - loadbalancer
