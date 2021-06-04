@@ -1,5 +1,6 @@
-
 #!/bin/bash
+
+echo $DATABASE_URI
 
 #apt install
 sudo apt-get update
