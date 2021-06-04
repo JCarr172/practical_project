@@ -6,10 +6,11 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length, ValidationError
 
+
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
-app.config['SECRET_KEY'] = os.getenv('SECRET')
+app.config['SECRET_KEY'] = os.urandom(24)
 
 db = SQLAlchemy(app)
 
