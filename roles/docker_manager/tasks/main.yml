@@ -10,5 +10,5 @@
 
 - name: Add to docker group
   user:
-    name: "{{ lookup{'env','USER'} }}"
+    name: "{{ lookup('env','USER') }}"
     groups: docker
