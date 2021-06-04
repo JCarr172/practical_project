@@ -6,7 +6,7 @@
       src: docker-compose.yaml
       dest: docker-compose.yaml
 
-- hosts: nginx
+- hosts: nginxloadbalancer
   become: true
   roles:
   - loadbalancer

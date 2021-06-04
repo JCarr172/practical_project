@@ -1,6 +1,6 @@
 - hosts: 
-  manger
-  worker1
+  - manger
+  - worker1
   become: true
   roles:
   - install_docker
