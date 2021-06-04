@@ -18,7 +18,7 @@ services:
         container_name: class-generator
         image: jcarr172/class-generator
         build: ./class-generator
-    statline-generator:
+    calculator:
         container_name: calculator
         image: jcarr172/calculator
         build: ./calculator
