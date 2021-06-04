@@ -1,0 +1,7 @@
+- hosts: manager
+  become: true
+  tasks:
+  - name: Copy docker-compose
+    copy:
+      src: docker-compose.yaml
+      dest: docker-compose.yaml
