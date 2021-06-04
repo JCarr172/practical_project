@@ -43,11 +43,11 @@ pipeline{
                 steps{
                     script{
                             sh 'ansible-playbook -i inventory.yaml playbook-deploy.yaml'
-                            sh 'ssh docker manger << EOF
+                            sh '''ssh docker manger << EOF
                                 export DATABASE_URI=${DATABASE_URI}
                                 export SECRET=${SECRET}
                                 docker stack depoly --compose-file docker-compose.yaml app
-                                EOF'
+                                EOF'''
                             }
                         }
                     }
