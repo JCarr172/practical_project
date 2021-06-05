@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/get_stats', methods = ['GET','POST'])
 def get_stats():
-    standard_stats=[15, 14, 13, 12, 14, 12]
+    standard_stats=[15, 14, 13, 12, 10, 8]
     strength = standard_stats.pop(random.randint(0,5))
     dext = standard_stats.pop(random.randint(0,4))
     const = standard_stats.pop(random.randint(0,3))

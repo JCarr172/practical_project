@@ -26,7 +26,7 @@ class Testcreate(TestBase):
         with requests_mock.Mocker() as mocker:
             mocker.get('http://stats-generator:5000/get_stats', json={'stats':{'stren':15,'dex':14,'con':13,'wis':8,'intel':16,'char':10}})
             mocker.get('http://class-generator:5000/get_class', json={'race':'Human','class':'Wizard'})
-            mocker.post('http://calculator:5000/change_stats', json={'name':'Caleb the brave','stren':15,'dex':14,'con':13,'wis':8,'intel':16,'char':10})
+            mocker.post('http://calculator:5000/change_stats', json={'stren':15,'dex':14,'con':13,'wis':8,'intel':16,'char':10})
             response = self.client.get(url_for("creater", name = 'Caleb'),follow_redirects=True)
             self.assertEqual(response.status_code, 200)
-            self.assertIn(b'Caleb the brave is a Human Wizard', response.data)
+            self.assertIn(b'Caleb is a Human Wizard', response.data)
