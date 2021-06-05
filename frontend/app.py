@@ -29,7 +29,7 @@ class Character(db.Model):
 class NameForm(FlaskForm):
      name = StringField('Name of character', 
           validators = [DataRequired(message='Field requried'), 
-          Length(min=1,max=30,message='Input was too long')])
+          Length(min=1,max=15,message='Input was too long')])
      submit = SubmitField('Submit')
 
 @app.route('/', methods=['GET','POST'])
@@ -48,8 +48,8 @@ def home():
 def creater(name):
      race_class = requests.get('http://class-generator:5000/get_class')
      stats = requests.get('http://stats-generator:5000/get_stats')
-     statline = requests.post('http://calculator:5000/change_stats', json={"race":race_class.json()['race'], 'stats':stats.json()['stats']})
-     new_char = Character(name = name,
+     statline = requests.post('http://calculator:5000/change_stats', json={"name":name, "race":race_class.json()['race'], 'stats':stats.json()['stats']})
+     new_char = Character(name = statline.json()["name"],
                race = race_class.json()['race'],
                class_= race_class.json()['class'],
                strength = statline.json()["stren"],
