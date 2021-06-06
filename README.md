@@ -24,3 +24,22 @@ Create a application that is composed of at least 4 microservices that work toge
 We were also to use all supporting tools and methodologies in core modules.
 
 ### **Plan**
+
+To meet the requirements of the MVP I came up with the following application idea:
+
+**DnD character creater**
+
+* Service 1: This is the frontend and displays the final product of all the other services and shows the past five results.
+* Service 2: This returned a randomly selected race and class for the character.
+* Service 3: This returned a randomly selected list of attribute values for the character.
+* Service 4: This took the generated attribute values and adjusted them according to which race was chosen in service 2.
+
+## **Architecture**
+#
+### **Database Structure**
+
+This application only uses one table, below is an entity diagram for the table.
+
+
+
+### **CI Pipeline** ###
