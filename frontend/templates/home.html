@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<h2 style="color:red">This webapp creates a random DnD character for you!</h2>
+<h2 style="color:purple">This webapp creates a random DnD character for you!</h2>
 <form method='POST' action='' >
     {{form.hidden_tag() }}
     {{form.name.label}} {{form.name}}
@@ -23,7 +23,7 @@
     Charisma: {{latest.charisma}}
 </p>
 
-<h3 style="color:red"> Your last five characters were:</h3>
+<h3 style="color:purple"> Your last five characters were:</h3>
 
 {% for character in all_chars %}
 
