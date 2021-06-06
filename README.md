@@ -6,9 +6,9 @@
     * [Plan](#Plan)
 * [Architecture](#architecture)
     * [Database Structure](#Database-Structure)
-    * [CI Pipeline](#CI-Pipeline)
     * [Project Tracking](#Project-Tracking)
     * [Risk Assessment](#Risk-Assessment)
+* [CI Pipeline](#CI-Pipeline)
 * [Development](#development)
     * [Testing](#Testing)
     * [Front end](#Front-end)
@@ -38,8 +38,28 @@ To meet the requirements of the MVP I came up with the following application ide
 #
 ### **Database Structure**
 
-This application only uses one table, below is an entity diagram for the table.
+This application only uses one table, below is an entity diagram for the table. The original plan for the application didn't include the name value but I decided it would make a better app if the user could personalise the created character.
+
+![Entity diagram](https://i.imgur.com/3AdioJa.png)
+
+### **Project tracking**
+
+My project tracking board can be seen below. I choose to use Trello over other providers as Trello is very lightweight and is ideal for smaller projects like this one.
+
+![Trello board](https://i.imgur.com/c7RpyA4.png)
+
+The full board can be found [here](https://trello.com/b/D2qI6f8O/practical-project)
+
+### **Risk Assessment**
+
+## **CI Pipeline** ##
+#
+
+![CI Pipeline](https://i.imgur.com/KWcLJ8S.png)
 
 
 
-### **CI Pipeline** ###
+![Frontend Testing](https://i.imgur.com/bHVwNBz.png)
+![Class-generator Testing](https://i.imgur.com/k9EF3rE.png)
+![Stats-generator Testing](https://i.imgur.com/bHVwNBz.png)
+![Calculator Testing](https://i.imgur.com/mLPiBnq.png)
