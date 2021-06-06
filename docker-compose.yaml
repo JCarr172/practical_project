@@ -4,6 +4,8 @@ services:
         container_name: frontend
         image: jcarr172/frontend
         build: ./frontend
+        deploy:
+            replicas: 2
         ports: 
           - published: 5000
             target: 5000
@@ -14,11 +16,17 @@ services:
         container_name: stats-generator
         image: jcarr172/stats-generator
         build: ./stats-generator
+        deploy:
+            replicas: 2
     class-generator:
         container_name: class-generator
         image: jcarr172/class-generator
         build: ./class-generator
+        deploy:
+            replicas: 2
     calculator:
         container_name: calculator
         image: jcarr172/calculator
         build: ./calculator
+        deploy:
+            replicas: 2
