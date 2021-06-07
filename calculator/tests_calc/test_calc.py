@@ -17,7 +17,7 @@ class TestHome(TestBase):
                 "wis":12, 
                 "intel":10,
                 "char":8}
-        response = self.client.post(url_for("change_stats"), json={"name":"Caleb","race":'human','stats':statline})
+        response = self.client.post(url_for("change_stats"), json={"race":'Human','stats':statline})
         self.assertEqual(response.status_code, 200)
         self.assertIn('"dex":15',response.data.decode('utf-8'))
 
@@ -28,7 +28,7 @@ class TestHome(TestBase):
                 "wis":12, 
                 "intel":10,
                 "char":8}
-        response = self.client.post(url_for("change_stats"), json={"name":"Caleb","race":'high elf','stats':statline})
+        response = self.client.post(url_for("change_stats"), json={"race":'High Elf','stats':statline})
         self.assertEqual(response.status_code, 200)
         self.assertIn('"dex":16',response.data.decode('utf-8'))
         self.assertIn('"intel":11',response.data.decode('utf-8'))
@@ -40,7 +40,7 @@ class TestHome(TestBase):
                 "wis":12, 
                 "intel":10,
                 "char":8}
-        response = self.client.post(url_for("change_stats"), json={"name":"Caleb","race":'mountain dwarf','stats':statline})
+        response = self.client.post(url_for("change_stats"), json={"race":'Mountain Dwarf','stats':statline})
         self.assertEqual(response.status_code, 200)
         self.assertIn('"stren":17',response.data.decode('utf-8'))
         self.assertIn('"con":14',response.data.decode('utf-8'))
@@ -52,7 +52,7 @@ class TestHome(TestBase):
                 "wis":12, 
                 "intel":10,
                 "char":8}
-        response = self.client.post(url_for("change_stats"), json={"name":"Caleb","race":'lightfoot halfling','stats':statline})
+        response = self.client.post(url_for("change_stats"), json={"race":'Lightfoot Halfling','stats':statline})
         self.assertEqual(response.status_code, 200)
         self.assertIn('"dex":16',response.data.decode('utf-8'))
         self.assertIn('"char":9',response.data.decode('utf-8'))
@@ -64,7 +64,7 @@ class TestHome(TestBase):
                 "wis":12, 
                 "intel":10,
                 "char":8}
-        response = self.client.post(url_for("change_stats"), json={"name":"Caleb","race":'dragonborn','stats':statline})
+        response = self.client.post(url_for("change_stats"), json={"race":'Dragonborn','stats':statline})
         self.assertEqual(response.status_code, 200)
         self.assertIn('"stren":17',response.data.decode('utf-8'))
         self.assertIn('"char":9',response.data.decode('utf-8'))
