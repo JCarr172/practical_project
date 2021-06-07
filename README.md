@@ -30,7 +30,7 @@ We were also to use all supporting tools and methodologies in core modules.
 
 To meet the requirements of the MVP I came up with the following application idea:
 
-**DnD character creater**
+**DnD character creator**
 
 * Service 1: This is the frontend and displays the final product of all the other services and shows the past five results.
 * Service 2: This returned a randomly selected race and class for the character.
@@ -104,7 +104,7 @@ Pytest was used to test the functions of the application. As this tests uses ran
 ![Class-generator Testing](https://i.imgur.com/k9EF3rE.png)
 * Stats-generator 
 ![Stats-generator Testing](https://i.imgur.com/bHVwNBz.png)
-* Calulator
+* Calculator
 ![Calculator Testing](https://i.imgur.com/mLPiBnq.png)
 
 These tests are automatically run by Jenkins ensuring that a faultly version of the application is not deployed.
@@ -119,9 +119,10 @@ Below is an exmaple of what the user sees when they access the website. The user
 In future sprints I would like to:
 * Improve test coverage percentage on the frontend service.
 * Allow for limiting what type of character was made, i.e: Only magic users.
-* Improve the aethestics of the webpage.
+* Improve the aesthetics of the webpage.
 
 ## Author
 #
 
 James Carr
+
